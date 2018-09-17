@@ -1,0 +1,88 @@
+.filter-dropdown {
+	$border-color: $color-alto;
+	font-family: $font-secondary;
+	text-transform: uppercase;
+	position: relative;
+	color: #888888;
+	display: inline-block;
+
+	&:before, 
+    &:after {
+    	position: absolute;
+    	content: '';
+	    height: 0;
+	    width: 0;
+	    border: 10px solid;
+	    top: calc(100% - 10px);
+	    z-index: 1000;
+	    left: 28px;
+	    display: none;
+    }
+
+    &:before {
+		border-color: transparent transparent $border-color transparent;
+    }
+
+    &:after {
+		border-color: transparent transparent white transparent;
+		top: calc(100% - 8px);
+    }
+
+    &.has-dropdown {
+
+    	&:before, 
+    	&:after {
+    		display: block;
+    	}
+    }
+
+	&__button {
+		background: #f9f9f9;
+		border-bottom: 3px solid $border-color;
+		padding: 13px 70px 13px 21px;
+		display: inline-block;
+		font-size: 17px;
+		height: 42px;
+		position: relative;
+		cursor: pointer;
+		user-select: none; 
+
+		&:after {
+		    content: '❮';
+		    position: absolute;
+		    transform: rotate(-90deg);
+		    right: 20px;
+		}
+	}
+
+	&__options {
+		width: 250px;
+		height: 167px;
+		border: 1px solid $border-color;
+		border-bottom: 3px solid $border-color;
+		overflow-y: scroll;
+		position: absolute;
+		background: white;
+		z-index: 999;
+		left: 0;
+	    top: calc(100% + 10px);
+	    display: none;
+
+	    .has-dropdown & {
+	    	display: block;
+	    }
+	}
+
+	&__option {
+		border-bottom: 1px solid $border-color;
+		height: 41px;
+	    display: flex;
+	    align-items: center;
+	    padding-left: 15px;
+	    padding-right: 15px;
+
+	    input {
+	    	margin-right: 1em;
+	    }
+	}
+}

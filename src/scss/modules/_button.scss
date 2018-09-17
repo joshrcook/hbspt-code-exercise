@@ -1,0 +1,11 @@
+.button {
+	display: inline-block;
+	background: $color-curious-blue;
+	white-space: nowrap;
+	font-family: $font-secondary;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	padding: 22px 41px;
+}

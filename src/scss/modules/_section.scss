@@ -1,0 +1,26 @@
+.section {
+	$padding-x: calc(50% - #{$container-width / 2 - 15});
+	overflow: hidden;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@media screen and (min-width: #{map-get($breakpoints, 'lg')}) {
+		padding-left: $padding-x;
+		padding-right: $padding-x;
+	}
+}
+
+.section--muted {
+	background-color: $color-pampas;
+}
+
+.section--primary {
+	background-color: $color-eden;
+}
+
+.section--testimonial {
+	display: flex;
+	justify-content: center;
+}

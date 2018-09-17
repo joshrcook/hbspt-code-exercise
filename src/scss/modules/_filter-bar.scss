@@ -1,0 +1,28 @@
+.filter-bar {
+	border: 1px solid $color-alto;
+	padding: 20px;
+
+	&__row {
+		margin-top: 20px;
+
+		// A little hack to wrap floated elements...
+		&:before, 
+		&:after {
+			display: table;
+			width: 100%;
+			content: '';
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		> * {
+			margin-left: 24px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

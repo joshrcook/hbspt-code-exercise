@@ -1,2 +1,7 @@
 .idea
 node_modules
+src/compiled
+dist
+build
+.DS_Store
+.cache

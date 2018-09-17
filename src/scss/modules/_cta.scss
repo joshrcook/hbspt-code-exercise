@@ -1,0 +1,27 @@
+.cta {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	@include media(sm) {
+		flex-direction: row;
+	}
+
+	&__text {
+	    color: $color-silver;
+	    font-size: 15px;
+	    line-height: 1.75;
+	    font-weight: 300;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+
+        @include media(sm) {
+        	margin-right: 30px;
+        	margin-bottom: 0;
+        }
+	}
+
+	&__link {
+	}
+}
