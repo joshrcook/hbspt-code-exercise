@@ -63,6 +63,4 @@ gulp.task('serve', () => {
 })
 
 // The default task (called when we run `gulp` from cli)
-gulp.task('default', ['ejs', 'watch:ejs', 'bundle', 'watch:html', 'watch:js', 'watch:scss', 'watch:vue', 'serve' /*'js', 'sass'*/], function() {
-
-});
+gulp.task('default', ['ejs', 'watch:ejs', 'bundle', 'watch:html', 'watch:js', 'watch:scss', 'watch:vue', 'serve']);
