@@ -48,7 +48,7 @@ gulp.task('watch:ejs', () => {
 	gulp.watch(paths.watch.ejs, ['ejs']);
 });
 
-gulp.task('bundle', () => {
+gulp.task('bundle', ['ejs'], () => {
 	const bundler = new Bundler(paths.source.html, {
 		watch: false,
 		outDir: paths.dest.build,
@@ -56,7 +56,7 @@ gulp.task('bundle', () => {
 	bundler.bundle();
 });
 
-gulp.task('serve', () => {
+gulp.task('serve', ['bundle'], () => {
 	liveServer.start({
 		root: paths.dest.build,
 	});
