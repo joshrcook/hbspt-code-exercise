@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
-    <head>
-    	<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-        <% include ../partials/_fonts %>
-        <%- include ../partials/_styles %>
-    </head>
-    <body>
+<%- include ../partials/header %>
 
         <%- include('../partials/_testimonial', {
         	quote: 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare.', 
@@ -25,8 +16,4 @@
 
         }) %>
 
-        <%- include ../partials/_modals %>
-
-		<%- include ../partials/_scripts %>
-    </body>
-</html>
+<%- include ../partials/footer %>

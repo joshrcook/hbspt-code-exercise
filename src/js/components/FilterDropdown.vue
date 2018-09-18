@@ -56,5 +56,13 @@ export default {
 			this.isDropdownShown = !this.isDropdownShown;
 		},
 	},
+
+	mounted() {
+		document.addEventListener('click', (e) => {
+			if(!this.$el.contains(e.target)) {
+				this.isDropdownShown = false;
+			}
+		});
+	},
 };
 </script>

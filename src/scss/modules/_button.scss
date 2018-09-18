@@ -9,3 +9,11 @@
 	border-radius: 5px;
 	padding: 22px 41px;
 }
+
+.button--text {
+	padding: 0;
+	background: transparent;
+	color: $color-curious-blue;
+	text-decoration: underline;
+	font-size: 15px;
+}

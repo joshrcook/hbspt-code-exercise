@@ -1,0 +1,25 @@
+.search-input {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		display: inline-block;
+	    font: normal normal normal 14px/1 FontAwesome;
+	    font-size: inherit;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    line-height: 36px;
+	    right: 10px;
+	    color: $color-gray;
+	}
+
+	&__input-box {
+		height: 36px;
+		border: 1px solid $color-alto;
+		width: 222px;
+		padding-right: 40px;
+		padding-left: 10px;
+	}
+} // .search-input

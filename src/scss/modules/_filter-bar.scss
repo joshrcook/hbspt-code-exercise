@@ -1,6 +1,20 @@
 .filter-bar {
 	border: 1px solid $color-alto;
 	padding: 20px;
+	color: $color-emporer;
+
+	.search-input {
+		float: left;
+		margin-left: 0;
+		margin-top: 10px;
+		clear: left;
+
+		@include media('sm') {
+			float: right;
+			margin-top: 0;
+			clear: none;
+		}
+	}
 
 	&__row {
 		margin-top: 20px;
@@ -18,11 +32,22 @@
 		}
 
 		> * {
-			margin-left: 24px;
+			margin-left: 5px;
 
 			&:first-child {
 				margin-left: 0;
 			}
+
+			@include media('sm') {
+				margin-left: 24px;
+			}
+		}
+	}
+
+	&__radio {
+
+		input {
+			vertical-align: top;
 		}
 	}
 }

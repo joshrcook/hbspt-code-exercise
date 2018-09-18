@@ -1,5 +1,5 @@
 <template>
-	<section id="filterable-content" class="section">
+	<section id="filterable-content" class="section section--filterable-content">
 		<FilterBar />
 		<MediaList :media="filteredMedia" />
 	</section>

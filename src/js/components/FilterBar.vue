@@ -22,16 +22,20 @@
 					/>
 				</div>
 				<div class="filter-bar__row  row">
-					<div class="float--left">
+					<div class="filter-bar__radio  float--left">
 						<input type="radio" name="type" value="movie" v-model="type">
 						<label>Movies</label>
 					</div>
-					<div class="float--left">
+					<div class="filter-bar__radio  float--left">
 						<input type="radio" name="type" value="book" v-model="type">
 						<label>Books</label>
 					</div>
 					<div class="float--right">
-						<a href="#" @click.prevent="clearFilters">Clear filters</a>
+						<a 
+							href="#" 
+							class="button button--text"
+							@click.prevent="clearFilters"
+						>Clear filters</a>
 					</div>
 				</div>
 			</div>

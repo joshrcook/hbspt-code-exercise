@@ -15,17 +15,23 @@ const genreReducer = (acc, movie) => {
     return acc;
 };
 
-const initialType = null;
-const initialGenre = [];
-const initialYear = [];
+const initialState = {
+    type: null, 
+    genre: [], 
+    year: [], 
+    searchInput: '',
+};
 
 const store = new Vuex.Store({
-    state: {
-        media,
-        type: initialType,
-        genre: initialGenre,
-        year: initialYear,
-    },
+    state: Object.assign({}, {
+        media: media.sort((a, b) => {
+            const titleA = a.title.toLowerCase();
+            const titleB = b.title.toLowerCase();
+            if (a > b) return -1;
+            if (a < b) return 1;
+            return 0;
+        }),
+    }, initialState),
     getters: {
         movies: state => {
             return state.media.filter((item) => {
@@ -33,8 +39,8 @@ const store = new Vuex.Store({
             });
         },
         alphabeticalMedia: state => {
-        	return state.media.slice().sort((a, b) => {
-        		return a.title.toLowerCase() >= b.title.toLowerCase();
+        	return state.media.sort((a, b) => {
+                return a.title.localeCompare(b.title, 'en', {sensitivity: 'base'});
         	});
         },
         filteredMedia: (state, getters) => {
@@ -58,6 +64,11 @@ const store = new Vuex.Store({
                 	if (state.year.length === 0) return true;
                 	return state.year.indexOf(item.year) !== -1
                 })
+                // Filter by search input
+                .filter((item) => {
+                    if (state.searchInput.length === 0) return true;
+                    return item.title.toLowerCase().includes(state.searchInput.toLowerCase());
+                });
         },
         filteredGenres: (state, getters) => {
         	return getters.filteredMedia.reduce(genreReducer, []);
@@ -88,10 +99,13 @@ const store = new Vuex.Store({
         updateYear(state, payload) {
         	state.year = payload;
         },
+        updateSearchInput(state, payload) {
+            state.searchInput = payload;
+        },
         clearFilters(state) {
-        	state.type = initialType;
-        	state.genre = initialGenre;
-        	state.year = initialYear;
+            Object.keys(initialState).forEach((key) => {
+                state[key] = initialState[key];
+            });
         },
     },
 })
