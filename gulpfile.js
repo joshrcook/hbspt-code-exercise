@@ -53,7 +53,7 @@ gulp.task('bundle', ['ejs'], () => {
 		watch: false,
 		outDir: paths.dest.build,
 	});
-	bundler.bundle();
+	return bundler.bundle();
 });
 
 gulp.task('serve', ['bundle'], () => {
