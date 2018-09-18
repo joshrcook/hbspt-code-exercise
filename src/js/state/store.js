@@ -24,13 +24,7 @@ const initialState = {
 
 const store = new Vuex.Store({
     state: Object.assign({}, {
-        media: media.sort((a, b) => {
-            const titleA = a.title.toLowerCase();
-            const titleB = b.title.toLowerCase();
-            if (a > b) return -1;
-            if (a < b) return 1;
-            return 0;
-        }),
+        media,
     }, initialState),
     getters: {
         movies: state => {
